@@ -7,8 +7,10 @@ import (
 )
 
 type IUserRepository interface {
-	GetUserByEmail(string) (datamodels.User,error)
-	InsertUser(*datamodels.User) (int64,error)
+	InsertUser(*datamodels.User)(int64,error)
+	UpdateUserByUserId(*datamodels.User)(int64,error)
+	DeleteUserByUserOpenId(string)(int64,error)
+	GetUserByEmail(string)(datamodels.User,error)
 }
 
 type UserRepository struct {
@@ -31,6 +33,17 @@ func (u *UserRepository) GetUserByEmail(email string) (datamodels.User,error) {
 
 func (u *UserRepository) InsertUser(user *datamodels.User) (int64,error) {
 	return u.conn.Insert(user)
+}
+
+func (u *UserRepository) UpdateUserByUserId(user *datamodels.User)(int64,error) {
+	return u.conn.Update(user)
+}
+
+func (u *UserRepository) DeleteUserByUserOpenId(openid string)(int64,error) {
+	user := datamodels.User{
+		OpenId: openid,
+	}
+	return u.conn.Delete(&user)
 }
 
 func NewUserRepository(conn *xorm.Engine) IUserRepository {

@@ -83,6 +83,18 @@
 			"revisionTime": "2019-09-05T09:18:23Z"
 		},
 		{
+			"checksumSHA1": "+vQ15jxjH+sbBJCqlxR6ofgDS34=",
+			"path": "github.com/liu578101804/go-tool/jwt",
+			"revision": "bfbd7f0b3885d6ddffa1044334256913e263251b",
+			"revisionTime": "2019-09-06T08:33:28Z"
+		},
+		{
+			"checksumSHA1": "cfmXd3iTyWjxsLNxXBTfRSOu128=",
+			"path": "github.com/liu578101804/go-tool/mailman",
+			"revision": "767ecb981a5b852ea042a62a82257cbc8d29f213",
+			"revisionTime": "2019-09-06T05:04:43Z"
+		},
+		{
 			"checksumSHA1": "C3Xbt5Nq5Wez3B5cyi8vQlVkP1g=",
 			"path": "github.com/mattn/go-isatty",
 			"revision": "bf9a1dea1961e1d831824fb135332bfb8c10e8b8",
